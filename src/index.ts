@@ -45,3 +45,41 @@ if (cluster.isPrimary) {
     console.log(`App listening on port ${port}`);
   });
 }
+
+
+// import express from 'express';
+// import { Worker } from 'worker_threads';
+
+// const app = express();
+// const port = 3000;
+
+// app.get('/', (req, res) => {
+//   res.send('Hello World');
+// });
+
+// app.get('/api/:n', (req, res) => {
+//   const n = parseInt(req.params.n);
+//   if (isNaN(n)) return res.status(400).send('Invalid number');
+
+//   const worker = new Worker('./worker.js', {
+//     workerData: n > 5000000000 ? 5000000000 : n,
+//   });
+
+//   worker.on('message', (count) => {
+//     res.send(`Final count is ${count} from thread ${worker.threadId}`);
+//   });
+
+//   worker.on('error', (err) => {
+//     res.status(500).send('Something went wrong in worker thread');
+//   });
+
+//   worker.on('exit', (code) => {
+//     if (code !== 0) {
+//       console.error(`Worker stopped with exit code ${code}`);
+//     }
+//   });
+// });
+
+// app.listen(port, () => {
+//   console.log(`App listening on http://localhost:${port}`);
+// });
